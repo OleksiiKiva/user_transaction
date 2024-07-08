@@ -1,13 +1,11 @@
-from fastapi import FastAPI, Depends, HTTPException, Request
-from jinja2 import FileSystemLoader, Environment
-from sqlalchemy.orm import Session, sessionmaker
+from fastapi import FastAPI, Depends, HTTPException
+from sqlalchemy.orm import Session
 from starlette.templating import Jinja2Templates
-from fastapi.responses import HTMLResponse
 
 import crud
 import schemas
-from db.engine import SessionLocal, engine
-from db.models import admin, DBTransaction
+from db.engine import SessionLocal
+from db.models import admin
 
 app = FastAPI(title="User-Transaction")
 templates = Jinja2Templates(directory="templates")
@@ -28,8 +26,8 @@ def get_db() -> Session:
 # @app.get("/test/")
 def total_transactions():
     count = crud.total_transactions(db=SessionLocal())
-    amaont = crud.total_amount(db=SessionLocal())
-    return {"count": count, "amount": amaont}
+    amount = crud.total_amount(db=SessionLocal())
+    return {"count": count, "amount": amount}
 
 
 @app.post("/users/", response_model=schemas.UserCreateResponse)
