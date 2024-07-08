@@ -14,7 +14,7 @@ Managing data from “users” tables and “transaction” tables
   <img alt="models-diagram" src="static/picture/admin-users.png" width="800"/>
   <img alt="models-diagram" src="static/picture/admin-transactions.png" width="800"/>
 * statistics window (information about the total number of transactions and the total amount of all
-  transactions) <img alt="models-diagram" src="static/picture/admin-statistics.png" width="800"/>
+  transactions) <img alt="models-diagram" src="static/picture/admin-statistic.png" width="800"/>
 
 ## 🛢️Technology stack
 
