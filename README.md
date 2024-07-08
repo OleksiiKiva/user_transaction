@@ -1,6 +1,6 @@
 <h1 align="center">🔁 User-Transaction 🔁</h1>
-<h3 align="center">Microservice for managing users and their transactions</h3>
-<h3 align="center">Based on Starlette and FastAPI</h3>
+<h3 align="center">microservice for managing users and their transactions</h3>
+<h4 align="center">based on Starlette and FastAPI</h4>
 
 ## 📝 Description
 
@@ -28,13 +28,17 @@ Managing data from “users” tables and “transaction” tables
 
 ## 🔀 Structure description
 
-* the root app is available at: [http://localhost:8000](http://localhost:8000)
-* GET `/admin/` -- Starlette admin panel
-* POST `/docs/` -- API documentation on SwaggerUI
-    * POST `/users/` -- add user (accepts a username, returns the ID of the created user)
-    * GET `/users/` -- get all users (returns all users and all transactions of each user)
-    * GET `/users/{user_id}/` -- get user (accepts user_id, returns id, username, and all user transactions)
-    * POST `/transactions/` -- add transactions (accepts user_id, returns transaction type, amount)
+The app root is available at: [http://localhost:8000](http://localhost:8000)
+
+* `/admin/` -- Starlette admin panel
+* `/docs/` -- API documentation on SwaggerUI
+
+Implemented API endpoints
+
+* POST `/users/` -- add user (accepts a username, returns the ID of the created user)
+* GET `/users/` -- get all users (returns all users and all transactions of each user)
+* GET `/users/{user_id}/` -- get user (accepts user_id, returns id, username, and all user transactions)
+* POST `/transactions/` -- add transactions (accepts user_id, returns transaction type, amount)
 
 ## 🚀 Install using GitHub
 
