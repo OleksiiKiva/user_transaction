@@ -23,13 +23,6 @@ def get_db() -> Session:
         db.close()
 
 
-# @app.get("/test/")
-def total_transactions():
-    count = crud.total_transactions(db=SessionLocal())
-    amount = crud.total_amount(db=SessionLocal())
-    return {"count": count, "amount": amount}
-
-
 @app.post("/users/", response_model=schemas.UserCreateResponse)
 def add_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
     db_user = crud.get_user_by_username(db=db, username=user.username)
