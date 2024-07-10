@@ -35,10 +35,10 @@ The app root is available at: [http://localhost:8000](http://localhost:8000)
 
 Implemented API endpoints
 
-* POST `/users/` -- add user (accepts a username, returns the ID of the created user)
-* GET `/users/` -- get all users (returns all users and all transactions of each user)
-* GET `/users/{user_id}/` -- get user (accepts user_id, returns id, username, and all user transactions)
-* POST `/transactions/` -- add transactions (accepts user_id, returns transaction type, amount)
+* POST `/users/` -- add user (accepts the `username`, returns the `id` of the created user)
+* GET `/users/` -- get all users (returns all users and every user`s transaction)
+* GET `/users/{user_id}/` -- get user (accepts `user_id`, returns `id`, `username`, and all the user`s transactions)
+* POST `/transactions/` -- add transactions (accepts `user_id`, returns `transaction_type`, `amount`)
 
 ## 🚀 Install using GitHub
 
