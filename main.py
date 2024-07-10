@@ -1,6 +1,5 @@
 from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.orm import Session
-from starlette.templating import Jinja2Templates
 
 import crud
 import schemas
@@ -8,7 +7,6 @@ from db.engine import SessionLocal
 from db.models import admin
 
 app = FastAPI(title="User-Transaction")
-templates = Jinja2Templates(directory="templates")
 
 # Mount admin to your app
 admin.mount_to(app)

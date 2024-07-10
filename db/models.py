@@ -31,8 +31,8 @@ class DBTransaction(Base):
     user = relationship(DBUser)
 
 
-class StatisticAdminView(CustomView):
-    def total_transactions(self):
+class StatisticsAdminView(CustomView):
+    def statistics(self):
         count = crud.total_transactions(db=SessionLocal())
         amount = crud.total_amount(db=SessionLocal())
         return {"count": count, "amount": amount}
@@ -41,7 +41,8 @@ class StatisticAdminView(CustomView):
         self, request: Request, templates: Jinja2Templates
     ) -> Response:
         """Default methods to render view. Override this methods to add your custom logic."""
-        context = self.total_transactions()
+
+        context = self.statistics()
         context.update({"request": request, "title": self.title(request)})
 
         return templates.TemplateResponse(self.template_path, context)
@@ -50,8 +51,9 @@ class StatisticAdminView(CustomView):
 # Create an empty admin interface
 admin = Admin(engine, title="User-Transaction")
 
+# Add
 admin.add_view(
-    StatisticAdminView(
+    StatisticsAdminView(
         label="Statistic",
         template_path="statistic.html",
         add_to_menu=False,
